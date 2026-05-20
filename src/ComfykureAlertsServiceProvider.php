@@ -17,11 +17,11 @@ class ComfykureAlertsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'comfykure');
 
-        if ($this->app->runningInConsole()) {
-        $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migrations')
-        ], 'comfykure-migrations');
-    }
+       if ($this->app->runningInConsole()) {
+    $this->publishes([
+        __DIR__ . '/database/migrations/' => database_path('migrations')
+    ], 'comfykure-migrations');
+}
 
         // 2. 💡 SOLID CRASH ENGINE: Direct Laravel Exception Handler se detail pakrein
         $this->app->resolving(ExceptionHandler::class, function (ExceptionHandler $handler) {
