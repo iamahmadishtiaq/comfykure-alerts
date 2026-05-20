@@ -13,7 +13,7 @@ class ComfykureAlertsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // 1. Package ke baqi components load karwao
-        $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'comfykure');
 
